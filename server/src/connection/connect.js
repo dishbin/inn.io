@@ -1,12 +1,12 @@
-class Connection {
+const Listener = require("../listeners/listener-base");
+
+class Connection extends Listener {
     constructor(io, socket) {
-        this.io = io;
-        this.socket = socket;
-        this.listen();
+        super(io, socket);
     }
 
     listen() {
-        
+        this.usersListener = new UsersListener(io, socket, this);
     }
 }
 
