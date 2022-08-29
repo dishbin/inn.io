@@ -26,6 +26,7 @@ function handleLogInAttempt (cxn, credentials) {
 }
 
 async function createNewUser (cxn, newUser) {
+    console.log(newUser);
     bcrypt.hash(newUser.password, 10)
             .then(hash => {
                 return {
@@ -35,7 +36,10 @@ async function createNewUser (cxn, newUser) {
             })
             .then(user => User.create(user))
             .then(user => {
-                cxn.io.to(cxn.socket).emit('user-creation-successful', user);
+                cxn.io.to(cxn.socket).emit('user-creation-successful', {
+                    name: user.name,
+                    email: user.email
+                });
             })
             .catch(err => { throw err });
 }

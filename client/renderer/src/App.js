@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import io from 'socket.io-client';
 import './App.css';
 
+import SplashScreen from './components/splash/screen/SplashScreen';
+
 function App() {
+
+  const [socket, setSocket] = useState(null);
+  const [state, setState] = useState({
+    user: null
+  });
+
+  const attemptLogIn = (credentials) => {
+    socket.emit('log-in-attempt', credentials);
+  }
+
+  useEffect(() => {
+    const newSocket = io(`http://${window.location.hostname}:4000`);
+    setSocket(newSocket);
+
+    return () => newSocket.close();
+  }, [setSocket]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {(socket && state.user === null) &&
+        <SplashScreen socket={socket} state={state} setState={setState} />
+      }
     </div>
   );
+
 }
 
 export default App;

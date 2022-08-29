@@ -1,20 +1,25 @@
+const fs = require('fs');
+
 const {app, BrowserWindow} = require('electron');
-let win;
-function createWindow () {
+
+function createMainWindow () {
   win = new BrowserWindow({
-    width: 800, height: 600, transparent: false,
-    webPreferences: {
-      nodeIntegration: false,
-      preload: __dirname + '/preload.js'
+  width: 1200, height: 800, transparent: false,
+  webPreferences: {
+    nodeIntegration: false,
+    preload: __dirname + 'preloads/preload.js'
   }});
-win.loadURL('http://localhost:3000');
-  
-win.webContents.openDevTools();
-win.on('closed', () => {  
+  win.loadURL('http://localhost:3000');
+    
+  win.webContents.openDevTools({ mode: 'detach' });
+  win.on('closed', () => {  
     win = null
   });
 };
-app.on('ready', createWindow);
+
+let win;
+
+app.on('ready', createMainWindow);
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit()
@@ -22,6 +27,6 @@ app.on('window-all-closed', () => {
 });
 app.on('activate', () => {
   if (win === null) {
-    createWindow()
+    createMainWindow()
   }
 });

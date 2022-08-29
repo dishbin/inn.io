@@ -1,0 +1,62 @@
+.SplashLogin {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36;
+    color: #444444;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.submit-button {
+    background-color: rgb(126, 148, 126);
+    padding: 0.5em;
+    border-color: rgb(126, 148, 126);
+    border-style: none;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
+    border-radius: 0.25em;
+    color: whitesmoke;
+    font-weight: bolder;
+}
+
+.submit-button:hover {
+    box-shadow: 0em 0em 1em #888888;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.creation-mode-button {
+    background-color: white;
+    border: none;
+    margin: none;
+    color:rgb(72, 52, 90);
+    font-weight: bold;
+    margin-left: -0.35em;
+    justify-self: flex-start;
+}
+
+.creation-mode-button:hover {
+    color:rgba(72, 52, 90, 0.7);
+}

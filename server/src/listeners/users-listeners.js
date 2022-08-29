@@ -4,15 +4,15 @@ const {
     createNewUser
 } = require('../handlers/users-handlers');
 
-module.exports = class UsersListener extends Listener {
+module.exports = class UsersListener {
 
     constructor(io, socket, connection) {
-        super(io, socket);
+        this.io = io;
+        this.socket = socket;
         this.connection = connection;
-    }
-
-    listen() {
-        this.socket.on('login-attempt', credentials => handleLogInAttempt(this.connection, credentials));
+        
+        this.socket.on('log-in-attempt', credentials => handleLogInAttempt(this.connection, credentials));
         this.socket.on('new-user-submission', newUser => createNewUser(this.connection, newUser));
+        
     }
 }
