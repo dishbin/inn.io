@@ -1,0 +1,8 @@
+.MetaDrawer {
+    background-color: red;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 75vw;
+}

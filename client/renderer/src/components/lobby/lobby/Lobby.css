@@ -1,7 +1,7 @@
-.Main {
-    width: 100vw;
-    height: 100vh;
+.Lobby {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: gray;
+    width: 100vw;
 }
