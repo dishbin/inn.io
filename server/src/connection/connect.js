@@ -5,11 +5,18 @@ class Connection {
     constructor(io, socket) {
         this.io = io;
         this.socket = socket;
+        this.location;
+        console.log('new client connected');
         this.listen();
     }
 
     listen() {
         this.usersListener = new UsersListener(this.io, this.socket, this);
+    }
+
+    relocate(location) {
+        this.location = location;
+        this.socket.join(location);
     }
 }
 

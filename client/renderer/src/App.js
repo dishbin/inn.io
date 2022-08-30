@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import io from 'socket.io-client';
+import { io } from 'socket.io-client';
 import './App.css';
+import Main from './components/main/Main';
 
 import SplashScreen from './components/splash/screen/SplashScreen';
 
@@ -11,6 +12,8 @@ function App() {
     user: null
   });
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   const attemptLogIn = (credentials) => {
     socket.emit('log-in-attempt', credentials);
   }
@@ -19,13 +22,24 @@ function App() {
     const newSocket = io(`http://${window.location.hostname}:4000`);
     setSocket(newSocket);
 
-    return () => newSocket.close();
+    return () => {
+      newSocket.close()
+    };
   }, [setSocket]);
 
   return (
     <div className="App">
-      {(socket && state.user === null) &&
-        <SplashScreen socket={socket} state={state} setState={setState} />
+      {(socket && isLoggedIn && state.user) &&
+        <Main />
+      }
+      {(socket && !isLoggedIn && state.user === null) &&
+        <SplashScreen 
+          socket={socket} 
+          state={state} 
+          setState={setState} 
+          isLoggedIn={isLoggedIn} 
+          setIsLoggedIn={setIsLoggedIn}
+        />
       }
     </div>
   );

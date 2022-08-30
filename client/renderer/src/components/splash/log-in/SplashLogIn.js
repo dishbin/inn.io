@@ -17,8 +17,11 @@ export default function SplashLogIn ({ socket, setCreationMode, logIn }) {
         });
     }
 
-    const attemptLogIn = (credentials) => {
-        socket.emit('log-in-attempt', credentials);
+    const attemptLogIn = () => {
+        socket.emit('log-in-attempt', {
+            name: userInfo.username,
+            password: userInfo.password
+        });
     }
 
     return(
