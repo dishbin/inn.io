@@ -7,12 +7,10 @@ module.exports = {
 };
 
 function handleLogInAttempt (cxn, credentials) {
-    console.log(credentials);
     let result = false,
         foundUser;
     User.findOne({ name: credentials.name })
         .then(user => {
-            console.log(user);
             foundUser = user;
             return bcrypt.compare(credentials.password, user.password);
         })

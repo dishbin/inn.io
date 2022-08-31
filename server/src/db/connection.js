@@ -11,7 +11,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then((instance) =>
-    console.log(`connected to ${instance.connections[0].name}`)
+    console.log(`sitting in ${instance.connections[0].name}`)
   )
   .catch((error) => console.log('Connection failed!', error));
 

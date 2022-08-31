@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import './App.css';
-import Main from './components/main/Main';
+import Main from './components/main/main/Main';
 
 import SplashScreen from './components/splash/screen/SplashScreen';
 
@@ -30,7 +30,13 @@ function App() {
   return (
     <div className="App">
       {(socket && isLoggedIn && state.user) &&
-        <Main />
+        <Main 
+          socket={socket}
+          state={state}
+          setState={setState}
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+        />
       }
       {(socket && !isLoggedIn && state.user === null) &&
         <SplashScreen 
