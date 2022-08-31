@@ -3,13 +3,10 @@ import './MetaDrawer.css';
 
 export default function MetaDrawer() {
 
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     return(
-        <div className='MetaDrawer' style={{ 
-            width: (isOpen) ? '25vw' : '5vw',
-            marginLeft: (isOpen) ? '75vw' : '95vw'
-            }}>
+        <div className={`MetaDrawer ${(isOpen) ? 'meta-open' : 'meta-close'}`}>
             <div className='top-bar'>
                 <button
                     className='display-toggle'
