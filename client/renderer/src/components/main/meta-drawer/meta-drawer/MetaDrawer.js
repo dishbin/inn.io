@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ChannelChat from '../../../channel-chat/ChannelChat';
 import './MetaDrawer.css';
 
 export default function MetaDrawer() {
@@ -13,7 +14,7 @@ export default function MetaDrawer() {
                     onClick={() => setIsOpen(!isOpen)}
                 >{(isOpen) ? 'close' : 'open'}</button>
             </div>
-            Meta Drawer
+            <ChannelChat />
         </div>
     );
 }

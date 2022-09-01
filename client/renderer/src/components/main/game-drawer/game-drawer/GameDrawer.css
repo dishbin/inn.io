@@ -4,6 +4,7 @@
     flex-direction: column;
     position: absolute;
     z-index: 10;
+    width: 25vw;
     box-shadow: 0em 0em 2em #444444;
 }
 
@@ -17,18 +18,18 @@
 
 @keyframes open {
     from { 
-        width: 5vw; 
+        margin-left: -2em;
     }
     to { 
-        width: 25vw; 
+        margin-left: 0;
     }
 }
 
 @keyframes close {
     from { 
-        width: 25vw; 
+        margin-left: 0;
     }
     to { 
-        width: 5vw; 
+        margin-left: -10em;
     }
 }

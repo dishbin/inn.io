@@ -1,0 +1,9 @@
+.ChannelChatMenuButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    width: 2.5em;
+    height: 2.5em;
+}
