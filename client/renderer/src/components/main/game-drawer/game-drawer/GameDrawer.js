@@ -3,6 +3,7 @@ import './GameDrawer.css';
 import MenuButton from '../../meta-drawer/menu-button/MenuButton';
 import CharactersTab from '../../../characters-tab/characters-tab/CharactersTab';
 import WorldsTab from '../../../worlds-tab/worlds-tab/WorldsTab';
+import AssetsTab from '../../../assets-tab/assets-tab/AssetsTab';
 
 export default function GameDrawer() {
 
@@ -15,6 +16,9 @@ export default function GameDrawer() {
         },
         {
             name: 'worlds'
+        },
+        {
+            name: 'assets'
         }
     ];
 
@@ -35,6 +39,9 @@ export default function GameDrawer() {
             }
             {(selectedTab === 'worlds') && 
                 <WorldsTab />
+            }
+            {(selectedTab === 'assets') &&
+                <AssetsTab />
             }
             <div className='tab-buttons-container'>
                 {tabs.map(tab => <MenuButton key={tab.name} name={tab.name} setTab={setTab}/>)}
