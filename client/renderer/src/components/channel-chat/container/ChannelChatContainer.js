@@ -5,7 +5,7 @@ import './ChannelChatContainer.css';
 export default function ChannelChatContainer() {
     return(
         <div className='ChannelChatContainer'>
-            
+            Channel Chat
         </div>
     );
 }

@@ -1,11 +1,12 @@
 .MetaDrawer {
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: absolute;
     width: 25vw;
     align-items: flex-start;
     border: none;
+    margin-left: 96.05vw;
 }
 
 .meta-open {
@@ -18,18 +19,18 @@
 
 @keyframes meta-open {
     from { 
-        margin-left: 95vw;
+        transform: translateX(0);
     }
     to { 
-        margin-left: 71vw;
+        transform: translateX(-25vw);
     }
 }
 
 @keyframes meta-close {
     from {
-        margin-left: 75vw;
+        transform: translateX(-25vw);
     }
     to {
-        margin-left: 96.2vw;
+        transform: translateX(0);
     }
 }
