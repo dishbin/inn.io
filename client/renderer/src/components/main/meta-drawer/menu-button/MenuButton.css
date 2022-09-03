@@ -1,0 +1,10 @@
+.MenuButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    width: 2.5em;
+    height: 2.5em;
+    box-shadow: 0em 0em 0.5em #444444;
+}

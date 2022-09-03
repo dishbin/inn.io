@@ -1,0 +1,9 @@
+.UsersTabContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+    width: 25vw;
+    height: 100vh;
+}

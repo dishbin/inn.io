@@ -1,0 +1,10 @@
+.AssetsTabContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    width: 25vw;
+    height: 100vh;
+    box-shadow: 0em 0em 2em #444444;
+}

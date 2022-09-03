@@ -4,7 +4,7 @@ const {app, BrowserWindow} = require('electron');
 
 function createMainWindow () {
   win = new BrowserWindow({
-  width: 1020, height: 760, transparent: false,
+  width: 1200, height: 800, transparent: false,
   webPreferences: {
     nodeIntegration: false,
     preload: __dirname + 'preloads/preload.js'
