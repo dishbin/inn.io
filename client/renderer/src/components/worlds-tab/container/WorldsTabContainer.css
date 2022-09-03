@@ -1,0 +1,9 @@
+.WorldsTabContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: green;
+    width: 25vw;
+    height: 100vh;
+}

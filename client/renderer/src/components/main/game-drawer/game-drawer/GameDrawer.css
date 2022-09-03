@@ -1,10 +1,11 @@
 .GameDrawer {
     height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     position: absolute;
     z-index: 10;
     width: 25vw;
+    margin-left: -25vw;
     box-shadow: 0em 0em 2em #444444;
 }
 
@@ -18,18 +19,18 @@
 
 @keyframes open {
     from { 
-        margin-left: -2em;
+        transform: translateX(0);
     }
     to { 
-        margin-left: 0;
+        transform: translateX(25vw);
     }
 }
 
 @keyframes close {
     from { 
-        margin-left: 0;
+        transform: translateX(25vw);
     }
     to { 
-        margin-left: -10em;
+        transform: translateX(0);
     }
 }
